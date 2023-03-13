@@ -1,0 +1,29 @@
+﻿@using AdsAuth
+@model AdVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @foreach (Ad a in Model.Ads)
+        {
+        <div class="jumbotron">
+
+            <h3>@a.Title</h3>
+            <h5>Details:@a.Description</h5>
+            <h5>Phone Number: @a.PhoneNumber</h5>
+
+
+            @if (Model.IsAuthenticated && a.UserId == Model.CurrentUser.Id)
+            {
+                <form method="post" action="/home/delete?id=@a.Id">
+                    <input type="hidden" name="id" value="@a.Id" />
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            }
+        </div>
+        }
+    </div>
+</div>
+

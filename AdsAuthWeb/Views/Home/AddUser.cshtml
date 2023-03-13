@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "AddUser";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3 jumbotron">
+        <h3>Signup</h3>
+        <form method="post" action="/home/adduser">
+            <input type="text" placeholder="Name" name="name" class="form-control" />
+            <br />
+            <input type="text" placeholder="Email" name="email" class="form-control" />
+            <br />
+            <input type="password" placeholder="Password" name="password" class="form-control" />
+            <br />
+
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
